@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+button {
+  cursor: pointer;
+  border-radius: 11px;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+input {
+  background: #f4f4f4;
+  border-radius: 11px;
+  padding: 8px;
+}
+
+.primary-btn {
+  background-color: #5057ea;
+  color: white;
+  width: 100%;
+  padding: 10px;
+}
+
+.secondary-btn {
+  color: #5057ea;
+}
+
+select {
+  background-color: white;
+  border-radius: 11px;
+  padding: 6px;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: none;
+}
