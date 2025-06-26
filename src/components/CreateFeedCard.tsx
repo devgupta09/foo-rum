@@ -28,7 +28,9 @@ const CreateFeedCard = () => {
   };
 
   const handleAddFeed = () => {
-    if (description.trim()) {
+    if (!isAuthorized) {
+      setShowAuthenticationModal(true);
+    } else if (description.trim()) {
       addFeed(description);
       setDescription("");
     } else {
@@ -52,12 +54,12 @@ const CreateFeedCard = () => {
                   <option value="Paragraph">Paragraph</option>
                 </select>
               </span>
-              <span className="flex items-center gap-1 md:gap-4">
-                <span className="bg-white p-1 w-8 h-8 shadow flex justify-center items-center rounded-[10px]">
+              <span className="flex items-center gap-2 md:gap-4">
+                <span className="bg-white p-1 md:w-8 md:h-8 w-6 h-6 shadow flex justify-center items-center rounded-[10px]">
                   <img
                     src={boldIcon}
                     alt="boldIcon"
-                    className="h-4 cursor-pointer"
+                    className="md:h-4 h-3 cursor-pointer"
                     onClick={() =>
                       checkAuth(showFunctinalityNotImplementedAlert)
                     }
@@ -66,47 +68,47 @@ const CreateFeedCard = () => {
                 <img
                   src={italicIcon}
                   alt="italicIcon"
-                  className="h-4 cursor-pointer"
+                  className="md:h-4 h-3 cursor-pointer"
                   onClick={() => checkAuth(showFunctinalityNotImplementedAlert)}
                 />
                 <img
                   src={underline}
                   alt="underline"
-                  className="h-4 cursor-pointer"
+                  className="md:h-4 h-3 cursor-pointer"
                   onClick={() => checkAuth(showFunctinalityNotImplementedAlert)}
                 />
               </span>
-              <span className="flex items-center md:gap-4 gap-2 border-l-2 border-r-2 md:px-4 border-[#0000001A]">
+              <span className="flex items-center md:gap-4 gap-2 border-l-2 border-r-2 px-4 border-[#0000001A]">
                 <img
                   src={unorderedList}
                   alt="unorderedList"
-                  className="h-4 cursor-pointer"
+                  className="md:h-4 h-3 cursor-pointer"
                   onClick={() => checkAuth(showFunctinalityNotImplementedAlert)}
                 />
                 <img
                   src={orderedList}
                   alt="orderedList"
-                  className="h-4 cursor-pointer"
+                  className="md:h-4 h-3 cursor-pointer"
                   onClick={() => checkAuth(showFunctinalityNotImplementedAlert)}
                 />
               </span>
-              <span className="flex items-center md:gap-4 gap-1">
+              <span className="flex items-center md:gap-4 gap-2">
                 <img
                   src={quotes}
                   alt="quotes"
-                  className="h-4 cursor-pointer"
+                  className="md:h-4 h-3 cursor-pointer"
                   onClick={() => checkAuth(showFunctinalityNotImplementedAlert)}
                 />
                 <img
                   src={script}
                   alt="script"
-                  className="h-4 cursor-pointer"
+                  className="md:h-4 h-3 cursor-pointer"
                   onClick={() => checkAuth(showFunctinalityNotImplementedAlert)}
                 />
               </span>
             </div>
             <span
-              className="bg-[#FF000026] rounded-[10px] w-10 h-10 flex justify-center items-center p-1 cursor-pointer"
+              className="bg-[#FF000026] rounded-[10px] md:w-10 md:h-10 w-8 h-8 flex justify-center items-center p-1 cursor-pointer"
               onClick={() => checkAuth(showFunctinalityNotImplementedAlert)}
             >
               <img src={deleteIcon} alt="delete" className="h-4" />

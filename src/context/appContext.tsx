@@ -35,7 +35,11 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const checkAuth = (callback: () => void) => {
-    callback();
+    if (isAuthorized) {
+      callback();
+    } else {
+      setShowAuthenticationModal(true);
+    }
   };
 
   const addFeed = (description: string) => {

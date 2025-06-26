@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import SigninForm from "../components/SigninForm";
 import SignupForm from "../components/SignupForm";
@@ -8,22 +8,14 @@ const AuthenticationModal: React.FC = () => {
   const [showSignupForm, setShowSignupForm] = useState(false);
   const location = useLocation();
 
-  const handleSignupClick = () => {
-    setShowSignupForm(!showSignupForm);
-  };
-
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, []);
-
   return (
-    <>
+    <div className="flex justify-center items-center h-full w-full">
       {location.pathname === "/home" && <div className="modal-wrapper" />}
       <div
-        className="modal-container rounded-3xl bg-[#EBEBEB] p-3"
+        tabIndex={-1}
+        className={`rounded-3xl bg-[#EBEBEB] p-3 md:w-[30rem] w-[22rem] max-w-full !focus:outline-none ${
+          location.pathname === "/home" ? "modal-container" : ""
+        }`}
         role="dialog"
         aria-modal="true"
       >
@@ -39,13 +31,13 @@ const AuthenticationModal: React.FC = () => {
           <button
             type="button"
             className="secondary-btn"
-            onClick={handleSignupClick}
+            onClick={() => setShowSignupForm((v) => !v)}
           >
             {showSignupForm ? "Sign in" : "Sign Up"}
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

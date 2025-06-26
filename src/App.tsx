@@ -16,7 +16,7 @@ const App = () => {
     <Router>
       <div className="h-screen w-screen flex flex-col ">
         <Header />
-        <div className="w-full h-full mt-20">
+        <div className="w-full h-full mt-18">
           <Suspense fallback={<Loader />}>
             <Routes>
               <Route path="/auth" element={<AuthenticationModal />} />
