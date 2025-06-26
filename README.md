@@ -63,7 +63,7 @@ src/
 - [Vite](https://vitejs.dev/)
 - [React Router](https://reactrouter.com/)
 - [Context API](https://react.dev/reference/react/useContext)
-- [Tailwind CSS](https://tailwindcss.com/) (or similar utility classes)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ## License
 
