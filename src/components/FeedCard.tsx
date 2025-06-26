@@ -1,9 +1,9 @@
 import React from "react";
-import type { FeedDetails } from "../types";
 import heart from "../assets/feedCard/heart.svg";
 import comment from "../assets/feedCard/comment.svg";
 import forward from "../assets/feedCard/forward.svg";
 import { useAppContext } from "../context/appContext";
+import type { FeedDetails } from "../context/feedList";
 
 interface Proptype {
   feedDetails: FeedDetails;
@@ -23,13 +23,15 @@ const FeedCard: React.FC<Proptype> = ({ feedDetails }) => {
           <img
             src={feedDetails.userProfile}
             alt="User profile"
-            className="h-10 w-10 md:h-12 md:w-12"
+            className="h-10 w-10"
           />
           <div className="flex flex-col">
             <span className="md:text-md text-sm font-semibold">
               {feedDetails.userName}
             </span>
-            <span className="text-[#0000005E] text-sm">5 mins ago</span>
+            <span className="text-[#0000005E] text-sm font-medium">
+              {feedDetails.posted}
+            </span>
           </div>
         </div>
         <div className="flex gap-2">
